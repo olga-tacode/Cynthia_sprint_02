@@ -103,6 +103,13 @@ const nameOf = () => {
   homeSection.classList.add("hide");
   svgOne.classList.remove("hide");
   svgTwo.classList.add("hide");
+  svgThree.classList.add("hide");
+  svgFour.classList.add("hide");
+  svgFive.classList.add("hide");
+  svgSix.classList.add("hide");
+  svgSeven.classList.add("hide");
+  svgEigth.classList.add("hide");
+  svgNine.classList.add("hide");
 };
 
 buttonAcept.addEventListener("click", nameOf);
@@ -110,6 +117,27 @@ buttonAcept.addEventListener("click", nameOf);
 moveSvgOne = () => {
   homeSection.classList.add("hide");
   svgOne.classList.add("hide");
-  svgTwo.classList.remove("hide");
+  svgTwo.classList.add("hide");
+  svgThree.classList.remove("hide");
+  svgFour.classList.add("hide");
+  svgFive.classList.add("hide");
+  svgSix.classList.add("hide");
+  svgSeven.classList.add("hide");
+  svgEigth.classList.add("hide");
+  svgNine.classList.add("hide");
+};
+buttonOneSvg.addEventListener("click", moveSvgOne);
+
+moveSvgTwo = () => {
+  homeSection.classList.add("hide");
+  svgOne.classList.add("hide");
+  svgTwo.classList.add("hide");
+  svgThree.classList.remove("hide");
+  svgFour.classList.add("hide");
+  svgFive.classList.add("hide");
+  svgSix.classList.add("hide");
+  svgSeven.classList.add("hide");
+  svgEigth.classList.add("hide");
+  svgNine.classList.add("hide");
 };
 buttonOneSvg.addEventListener("click", moveSvgOne);
