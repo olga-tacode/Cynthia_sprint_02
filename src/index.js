@@ -87,7 +87,7 @@ const nameOf = () => {
   const homeSection = document.getElementById("home");
   const svgOne = document.getElementById("svg-first");
 
-  userName.innerHTML = "Bienvenido(a) " + name;
+  userName.innerHTML = "Hola " + name;
   homeSection.classList.add("hide");
   svgOne.classList.remove("hide");
 };
