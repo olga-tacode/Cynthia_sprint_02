@@ -2,10 +2,6 @@ const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
 const buttonAcept = document.getElementById("aceptName");
-const name = document.getElementById("name").value;
-const userName = document.getElementById("userName");
-const home = document.getElementById("home");
-const svgFirst = document.getElementById("svg-first");
 
 const questions = [
   {
@@ -86,10 +82,14 @@ showQuiz();
 //submitButton.addEventListener("click", showResults);
 
 const nameOf = () => {
-  console.log(name);
-  userName.innerHTML = name;
-  home.classList.add("hide");
-  svgFirst.classList.remove("hide");
+  const name = document.getElementById("name").value;
+  const userName = document.getElementById("userName");
+  const homeSection = document.getElementById("home");
+  const svgOne = document.getElementById("svg-first");
+
+  userName.innerHTML = "Bienvenido(a) " + name;
+  homeSection.classList.add("hide");
+  svgOne.classList.remove("hide");
 };
 
 buttonAcept.addEventListener("click", nameOf);
