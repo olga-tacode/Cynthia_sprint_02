@@ -127,17 +127,3 @@ moveSvgOne = () => {
   svgNine.classList.add("hide");
 };
 buttonOneSvg.addEventListener("click", moveSvgOne);
-
-moveSvgTwo = () => {
-  homeSection.classList.add("hide");
-  svgOne.classList.add("hide");
-  svgTwo.classList.add("hide");
-  svgThree.classList.remove("hide");
-  svgFour.classList.add("hide");
-  svgFive.classList.add("hide");
-  svgSix.classList.add("hide");
-  svgSeven.classList.add("hide");
-  svgEigth.classList.add("hide");
-  svgNine.classList.add("hide");
-};
-buttonOneSvg.addEventListener("click", moveSvgOne);
