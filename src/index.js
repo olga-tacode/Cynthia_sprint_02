@@ -86,7 +86,8 @@ showQuiz();
 //submitButton.addEventListener("click", showResults);
 
 const nameOf = () => {
-  userName.innerHTML = "Bienvenido(a) " + name;
+  console.log(name);
+  userName.innerHTML = name;
   home.classList.add("hide");
   svgFirst.classList.remove("hide");
 };
