@@ -2,6 +2,21 @@ const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
 const buttonAcept = document.getElementById("aceptName");
+const homeSection = document.getElementById("home");
+const svgOne = document.getElementById("svg-first");
+const svgTwo = document.getElementById("svg-second");
+const svgThree = document.getElementById("svg-third");
+const svgFour = document.getElementById("svg-fourth");
+const svgFive = document.getElementById("svg fifth");
+const svgSix = document.getElementById("svg sixth");
+const svgSeven = document.getElementById("svg seventh");
+const svgEight = document.getElementById("svg-eighth");
+const svgNine = document.getElementById("svg nineth");
+const buttonOneSvg = document.getElementById("one-svg");
+const buttonTwoSvg = document.getElementById("two-svg");
+const buttonThreeSvg = document.getElementById("three-svg");
+const buttonFourSvg = document.getElementById("four-svg");
+const buttonFiveSvg = document.getElementById("five-svg");
 
 const questions = [
   {
@@ -84,12 +99,17 @@ showQuiz();
 const nameOf = () => {
   const name = document.getElementById("name").value;
   const userName = document.getElementById("userName");
-  const homeSection = document.getElementById("home");
-  const svgOne = document.getElementById("svg-first");
-
   userName.innerHTML = "Bienvenido(a) " + name;
   homeSection.classList.add("hide");
   svgOne.classList.remove("hide");
+  svgTwo.classList.add("hide");
 };
 
 buttonAcept.addEventListener("click", nameOf);
+
+moveSvgOne = () => {
+  homeSection.classList.add("hide");
+  svgOne.classList.add("hide");
+  svgTwo.classList.remove("hide");
+};
+buttonOneSvg.addEventListener("click", moveSvgOne);
