@@ -99,7 +99,7 @@ showQuiz();
 const nameOf = () => {
   const name = document.getElementById("name").value;
   const userName = document.getElementById("userName");
-  userName.innerHTML = "Bienvenido(a) " + name;
+  userName.innerHTML = "Hola " + name;
   homeSection.classList.add("hide");
   svgOne.classList.remove("hide");
   svgTwo.classList.add("hide");
