@@ -1,7 +1,6 @@
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
-
+const quizContainer = document.getElementById("quiz");
+const resultsContainer = document.getElementById("results");
+const submitButton = document.getElementById("submit");
 
 const questions = [
   {
@@ -33,57 +32,49 @@ const questions = [
   }
 ];
 
-
-
-function showQuiz(){
+function showQuiz() {
   const output = [];
 
-  questions.forEach(
-    (question, questionNumber) => {
-  
-      //-------Answers-----------------    
-      const answers = [];
-      for(letter in question.answers){
-        answers.push(
-          `<p>
+  questions.forEach((question, questionNumber) => {
+    //-------Answers-----------------
+    const answers = [];
+    for (letter in question.answers) {
+      answers.push(
+        `<p>
             <label>
               <input  class="with-gap" name="question${questionNumber}" value="${letter}" type="radio"/>
              <span> ${question.answers[letter]}</span>
             </label>
           </p>`
-        );
-      }
-      
-      //-------Questions + Answers---------- 
-      output.push(
-        `<div class="question"><h5>${question.question}</h5></div>
-        <div class="answers"> ${answers.join('')} </div>`
       );
     }
-  );
-  quizContainer.innerHTML = output.join('');
-};
 
+    //-------Questions + Answers----------
+    output.push(
+      `<div class="question"><h5>${question.question}</h5></div>
+        <div class="answers"> ${answers.join("")} </div>`
+    );
+  });
+  quizContainer.innerHTML = output.join("");
+}
 
+function showResults() {
+  const answerContainers = quizContainer.querySelectorAll(".answers");
 
-function showResults(){
-  const answerContainers = quizContainer.querySelectorAll('.answers');
-  
   let numCorrect = 0;
-  
-  questions.forEach( (question, questionNumber) => {
-    
+
+  questions.forEach((question, questionNumber) => {
     const answerContainer = answerContainers[questionNumber];
-    const selector = 'input[name=question'+questionNumber+']:checked';
+    const selector = "input[name=question" + questionNumber + "]:checked";
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    
-    if(userAnswer===question.rightAnswer){
+
+    if (userAnswer === question.rightAnswer) {
       numCorrect++;
     }
   });
 
   // show number of correct answers out of total
-  resultsContainer.innerHTML = numCorrect + ' de ' + questions.length;
+  resultsContainer.innerHTML = numCorrect + " de " + questions.length;
 }
 
 showQuiz();
