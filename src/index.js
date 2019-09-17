@@ -4,7 +4,7 @@ const svgOne = document.getElementById("svg-first");
 const svgTwo = document.getElementById("svg-second");
 const svgThree = document.getElementById("svg-third");
 const svgFour = document.getElementById("svg-fourth");
-const svgFive = document.getElementById("svg fifth");
+const svgFive = document.getElementById("svg-fifth");
 const svgSix = document.getElementById("svg-sixth");
 const svgSeven = document.getElementById("svg-seventh");
 const svgEight = document.getElementById("svg-eighth");
@@ -160,5 +160,6 @@ moveSvgNine = () => {
   svgSeven.classList.add("hide");
   svgEight.classList.add("hide");
   svgNine.classList.add("hide");
+  // document.location.reload();
 };
 buttonNineSvg.addEventListener("click", moveSvgNine);
