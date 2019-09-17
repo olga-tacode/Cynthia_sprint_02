@@ -52,7 +52,7 @@ function showQuiz() {
         `<p>
               <label>
                 <input name="question${questionNumber}" value="${letter}" type="radio"/>
-               <span> ${question.answers[letter]}</span>
+               <span class="radio-input"> ${question.answers[letter]}</span>
               </label>
             </p>`
       );
