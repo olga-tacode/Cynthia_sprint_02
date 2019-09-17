@@ -160,5 +160,6 @@ moveSvgNine = () => {
   svgSeven.classList.add("hide");
   svgEight.classList.add("hide");
   svgNine.classList.add("hide");
+  // document.location.reload();
 };
 buttonNineSvg.addEventListener("click", moveSvgNine);

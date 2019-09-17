@@ -1,6 +1,8 @@
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
+const buttonQuestions = document.getElementById("two-svg");
+const quizContainerTwo = document.getElementById("quiz-two");
 
 const questions = [
   {
@@ -30,15 +32,28 @@ const questions = [
     },
     rightAnswer: "c"
   }
-  //{
-  //question: "¿Para qué se utiliza el elemento path/?",
-  //answers: {
-  //a: "Definir figuras en nodos rectos",
-  //b: "Definir figuras diferentes, puntos y formas",
-  // c: "Definir figuras en curvas"
-  //},
-  //rightAnswer: "b"
-  //}
+];
+const questionTwo = [
+  {
+    question: "",
+    answers: {
+      a: "Diseño reresposivo; Es facil de usar; Accesibilidad",
+      b: "Accesibilidad; Performance; Se ve bonito",
+      c: "Accesibilidad; Performance; Diseño responsivo"
+    },
+    rightAnswer: "c"
+  }
+];
+const questionThree = [
+  {
+    question: "¿Para qué se utiliza el elemento path/?",
+    answers: {
+      a: "Definir figuras en nodos rectos",
+      b: "Definir figuras diferentes, puntos y formas",
+      c: "Definir figuras en curvas"
+    },
+    rightAnswer: "b"
+  }
 ];
 
 function showQuiz() {
@@ -81,10 +96,15 @@ function showResults() {
       numCorrect++;
     }
   });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = numCorrect + " de " + questions.length;
+  if (numCorrect <= 2) {
+    // show number of correct answers out of total
+    resultsContainer.innerHTML =
+      "¡Haz terminado! " + numCorrect + "/5" + " ¡Vamos a volver a intentarlo!";
+  } else {
+    resultsContainer.innerHTML =
+      "¡Haz terminado! " + numCorrect + "/5" + " ¡Felicidades!";
+  }
 }
 
-showQuiz();
+buttonQuestions.addEventListener("click", showQuiz());
 submitButton.addEventListener("click", showResults);
