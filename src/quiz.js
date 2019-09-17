@@ -51,7 +51,7 @@ function showQuiz() {
       answers.push(
         `<p>
               <label>
-                <input  class="with-gap" name="question${questionNumber}" value="${letter}" type="radio"/>
+                <input name="question${questionNumber}" value="${letter}" type="radio"/>
                <span> ${question.answers[letter]}</span>
               </label>
             </p>`
