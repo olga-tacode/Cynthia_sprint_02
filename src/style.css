@@ -11,9 +11,9 @@ svg {
   width: 100%;
 }
 
-img{
+img:not(.png) {
   height: 100%;
-}
+}				
 
 .page {
   display: grid;
@@ -166,9 +166,8 @@ img{
 .svg-second:nth-child(3) {
   width: 100%;
   height: 100%;
-  grid-column: 1/7;
+  grid-column: 1/8;
   grid-row: 3/9;
-  object-fit: cover;
 }
 
 .svg-second:nth-child(4) {
