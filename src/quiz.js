@@ -1,8 +1,11 @@
 const quizContainer = document.getElementById("quiz");
+const quizContainerTwo = document.getElementById("quiz-two");
+
+const bttnNextTwo = document.getElementById("two-svg");
+const bttnNextFive = document.getElementById("five-svg");
+
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
-const buttonQuestions = document.getElementById("two-svg");
-const quizContainerTwo = document.getElementById("quiz-two");
 
 const questions = [
   {
@@ -33,6 +36,7 @@ const questions = [
     rightAnswer: "c"
   }
 ];
+
 const questionTwo = [
   {
     question: "",
@@ -44,6 +48,7 @@ const questionTwo = [
     rightAnswer: "c"
   }
 ];
+
 const questionThree = [
   {
     question: "¿Para qué se utiliza el elemento path/?",
@@ -56,10 +61,10 @@ const questionThree = [
   }
 ];
 
-function showQuiz() {
+function showQuiz(questionsArray, quizContainer) {
   const output = [];
 
-  questions.forEach((question, questionNumber) => {
+  questionsArray.forEach((question, questionNumber) => {
     //-------Answers-----------------
     const answers = [];
     for (letter in question.answers) {
@@ -106,5 +111,6 @@ function showResults() {
   }
 }
 
-buttonQuestions.addEventListener("click", showQuiz());
+bttnNextTwo.addEventListener("click", showQuiz(questions, quizContainer));
+bttnNextFive.addEventListener("click", showQuiz(questionTwo, quizContainerTwo));
 submitButton.addEventListener("click", showResults);
