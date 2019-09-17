@@ -30,6 +30,15 @@ const questions = [
     },
     rightAnswer: "c"
   }
+  //{
+  //question: "¿Para qué se utiliza el elemento path/?",
+  //answers: {
+  //a: "Definir figuras en nodos rectos",
+  //b: "Definir figuras diferentes, puntos y formas",
+  // c: "Definir figuras en curvas"
+  //},
+  //rightAnswer: "b"
+  //}
 ];
 
 function showQuiz() {
@@ -55,7 +64,7 @@ function showQuiz() {
           <div class="answers"> ${answers.join("")} </div>`
     );
   });
-  //quizContainer.innerHTML = output.join("");
+  quizContainer.innerHTML = output.join("");
 }
 
 function showResults() {
@@ -78,4 +87,4 @@ function showResults() {
 }
 
 showQuiz();
-//submitButton.addEventListener("click", showResults);
+submitButton.addEventListener("click", showResults);
