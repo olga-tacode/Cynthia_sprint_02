@@ -1,8 +1,6 @@
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
-const buttonFourSvg = document.getElementById("four-svg");
-const buttonTwoSvg = document.getElementById("two-svg");
 
 const questions = [
   {
