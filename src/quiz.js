@@ -1,8 +1,10 @@
 const quizContainer = document.getElementById("quiz");
 const quizContainerTwo = document.getElementById("quiz-two");
+const quizContainerThree = document.getElementById("quiz-three");
 
 const bttnNextTwo = document.getElementById("two-svg");
 const bttnNextFive = document.getElementById("five-svg");
+const bttnNextEight = document.getElementById("svg-eight");
 
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
@@ -113,4 +115,8 @@ function showResults() {
 
 bttnNextTwo.addEventListener("click", showQuiz(questions, quizContainer));
 bttnNextFive.addEventListener("click", showQuiz(questionTwo, quizContainerTwo));
+bttnNextEight.addEventListener(
+  "click",
+  showQuiz(questionThree, quizContainerThree)
+);
 submitButton.addEventListener("click", showResults);
