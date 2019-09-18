@@ -76,7 +76,7 @@ function showQuiz(questionsArray, quizContainer) {
       answers.push(
         `<p>
               <label>
-                <input name="question${questionNumber}" value="${letter}" type="radio"/>
+                <input class="radio-bttn" name="question${questionNumber}" value="${letter}" type="radio"/>
                <span class="radio-input"> ${question.answers[letter]}</span>
               </label>
             </p>`
