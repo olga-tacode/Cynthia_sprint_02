@@ -18,6 +18,7 @@ const buttonSixSvg = document.getElementById("six-svg");
 const buttonSevenSvg = document.getElementById("seven-svg");
 const buttonEightSvg = document.getElementById("svg-eight");
 const buttonNineSvg = document.getElementById("nine-svg");
+const submitButton = document.getElementById("submit");
 
 const nameOf = () => {
   const name = document.getElementById("name").value;
