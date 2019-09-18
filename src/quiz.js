@@ -7,6 +7,7 @@ const bttnNextThree = document.getElementById("three-svg");
 const bttnNextFour = document.getElementById("four-svg");
 const bttnNextFive = document.getElementById("five-svg");
 const bttnNextEight = document.getElementById("svg-eight");
+const bttNextNine = document.getElementById("nine-svg");
 
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
@@ -138,4 +139,13 @@ submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   showResults(questionThree, quizContainerThree);
   printResults();
+});
+
+bttNextNine.addEventListener("click", function(event) {
+  event.preventDefault();
+  showQuiz(questions, quizContainer);
+  showQuiz(questionTwo, quizContainerTwo);
+  showQuiz(questionTwo, quizContainerTwo);
+  showQuiz(questionThree, quizContainerThree);
+  numCorrect = 0;
 });
