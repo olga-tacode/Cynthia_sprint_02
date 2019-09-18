@@ -11,6 +11,8 @@ const bttnNextEight = document.getElementById("svg-eight");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
 
+const congrats = document.getElementById("congrats");
+
 const questions = [
   {
     question: "¿Qué es SVG?",
@@ -55,7 +57,7 @@ const questionTwo = [
 
 const questionThree = [
   {
-    question: "¿Para qué se utiliza el elemento path/?",
+    question: "",
     answers: {
       a: "Definir figuras en nodos rectos",
       b: "Definir figuras diferentes, puntos y formas",
@@ -109,11 +111,25 @@ function showResults(questionsArray, answers) {
 const printResults = () => {
   if (numCorrect <= 2) {
     // show number of correct answers out of total
-    resultsContainer.innerHTML =
-      "¡Haz terminado! " + numCorrect + "/5" + " ¡Vamos a volver a intentarlo!";
+    resultsContainer.innerHTML = `${numCorrect}/5`;
+    congrats.innerHTML = `
+    <svg width="890" height="208" viewBox="0 0 890 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text fill="#F5C12D" stroke="#F5C12D" xml:space="preserve" style="white-space: pre" font-family="Nunito" font-size="92" letter-spacing="0.01em"><tspan x="114.56" y="83.268">&#xa1;Vamos a volver&#10;</tspan><tspan x="183.077" y="189.268"> a intentarlo!</tspan></text>
+      <text stroke="black" xml:space="preserve" style="white-space: pre" font-family="Nunito" font-size="92" letter-spacing="0.01em"><tspan x="118.56" y="83.268">&#xa1;Vamos a volver&#10;</tspan><tspan x="187.077" y="189.268"> a intentarlo!</tspan></text>
+    </svg>`;
   } else {
-    resultsContainer.innerHTML =
-      "¡Haz terminado! " + numCorrect + "/5" + " ¡Felicidades!";
+    resultsContainer.innerHTML = `${numCorrect}/5`;
+    congrats.innerHTML = `
+    <svg width="689" height="147" viewBox="0 0 689 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text fill="#F5C12D" stroke="#F5C12D" xml:space="preserve" style="white-space: pre" font-family="Nunito"
+                    font-size="124" letter-spacing="0.01em">
+                    <tspan x="0" y="112.296">&#xa1;Felicidades!</tspan>
+                </text>
+                <text stroke="black" xml:space="preserve" style="white-space: pre" font-family="Nunito" font-size="124"
+                    letter-spacing="0.01em">
+                    <tspan x="3" y="116.296">&#xa1;Felicidades!</tspan>
+                </text>
+            </svg>`;
   }
 };
 
