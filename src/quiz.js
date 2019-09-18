@@ -4,14 +4,15 @@ const quizContainerThree = document.getElementById("quiz-three");
 
 const bttnNextTwo = document.getElementById("two-svg");
 const bttnNextThree = document.getElementById("three-svg");
-const bttnNextFour= document.getElementById("four-svg");
+const bttnNextFour = document.getElementById("four-svg");
 const bttnNextFive = document.getElementById("five-svg");
 const bttnNextEight = document.getElementById("svg-eight");
 
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
 
-const questions = [{
+const questions = [
+  {
     question: "¿Qué es SVG?",
     answers: {
       a: "Un tipo de gráfico vectorial",
@@ -40,25 +41,29 @@ const questions = [{
   }
 ];
 
-const questionTwo = [{
-  question: "",
-  answers: {
-    a: "Diseño reresposivo; Es facil de usar; Accesibilidad",
-    b: "Accesibilidad; Performance; Se ve bonito",
-    c: "Accesibilidad; Performance; Diseño responsivo"
-  },
-  rightAnswer: "c"
-}];
+const questionTwo = [
+  {
+    question: "",
+    answers: {
+      a: "Diseño reresposivo; Es facil de usar; Accesibilidad",
+      b: "Accesibilidad; Performance; Se ve bonito",
+      c: "Accesibilidad; Performance; Diseño responsivo"
+    },
+    rightAnswer: "c"
+  }
+];
 
-const questionThree = [{
-  question: "¿Para qué se utiliza el elemento path/?",
-  answers: {
-    a: "Definir figuras en nodos rectos",
-    b: "Definir figuras diferentes, puntos y formas",
-    c: "Definir figuras en curvas"
-  },
-  rightAnswer: "b"
-}];
+const questionThree = [
+  {
+    question: "¿Para qué se utiliza el elemento path/?",
+    answers: {
+      a: "Definir figuras en nodos rectos",
+      b: "Definir figuras diferentes, puntos y formas",
+      c: "Definir figuras en curvas"
+    },
+    rightAnswer: "b"
+  }
+];
 
 function showQuiz(questionsArray, quizContainer) {
   const output = [];
@@ -86,9 +91,7 @@ function showQuiz(questionsArray, quizContainer) {
   quizContainer.innerHTML = output.join("");
 }
 
-
 let numCorrect = 0;
-
 
 function showResults(questionsArray, answers) {
   let answerContainers = answers.querySelectorAll(".answers");
@@ -103,27 +106,36 @@ function showResults(questionsArray, answers) {
   });
   console.log(numCorrect);
 }
+const printResults = () => {
+  if (numCorrect <= 2) {
+    // show number of correct answers out of total
+    resultsContainer.innerHTML =
+      "¡Haz terminado! " + numCorrect + "/5" + " ¡Vamos a volver a intentarlo!";
+  } else {
+    resultsContainer.innerHTML =
+      "¡Haz terminado! " + numCorrect + "/5" + " ¡Felicidades!";
+  }
+};
 
-/* if (numCorrect <= 2) {
-  // show number of correct answers out of total
-  resultsContainer.innerHTML =
-    "¡Haz terminado! " + numCorrect + "/5" + " ¡Vamos a volver a intentarlo!";
-} else {
-  resultsContainer.innerHTML =
-    "¡Haz terminado! " + numCorrect + "/5" + " ¡Felicidades!";
-} */
 bttnNextTwo.addEventListener("click", showQuiz(questions, quizContainer));
 bttnNextFour.addEventListener("click", showQuiz(questionTwo, quizContainerTwo));
-bttnNextEight.addEventListener("click", showQuiz(questionThree, quizContainerThree));
+bttnNextEight.addEventListener(
+  "click",
+  showQuiz(questionThree, quizContainerThree)
+);
 
-bttnNextThree.addEventListener("click", function(event){
+bttnNextThree.addEventListener("click", function(event) {
   event.preventDefault();
   showResults(questions, quizContainer);
 });
 
-bttnNextFive.addEventListener("click", function(event){
+bttnNextFive.addEventListener("click", function(event) {
   event.preventDefault();
   showResults(questionTwo, quizContainerTwo);
 });
 
-//submitButton.addEventListener("click", showResults);
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  showResults(questionThree, quizContainerThree);
+  printResults();
+});
