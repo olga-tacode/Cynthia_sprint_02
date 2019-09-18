@@ -119,7 +119,7 @@ const printResults = () => {
 
 bttnNextTwo.addEventListener("click", showQuiz(questions, quizContainer));
 bttnNextFour.addEventListener("click", showQuiz(questionTwo, quizContainerTwo));
-bttnNextEight.addEventListener(
+submitButton.addEventListener(
   "click",
   showQuiz(questionThree, quizContainerThree)
 );

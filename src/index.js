@@ -18,7 +18,7 @@ const buttonSixSvg = document.getElementById("six-svg");
 const buttonSevenSvg = document.getElementById("seven-svg");
 const buttonEightSvg = document.getElementById("svg-eight");
 const buttonNineSvg = document.getElementById("nine-svg");
-const submitButton = document.getElementById("submit");
+const submitButtons = document.getElementById("submit");
 
 const nameOf = () => {
   const name = document.getElementById("name").value;
@@ -148,7 +148,7 @@ moveSvgEight = () => {
   svgEight.classList.add("hide");
   svgNine.classList.remove("hide");
 };
-buttonEightSvg.addEventListener("click", moveSvgEight);
+submitButtons.addEventListener("click", moveSvgEight);
 
 moveSvgNine = () => {
   homeSection.classList.add("hide");
