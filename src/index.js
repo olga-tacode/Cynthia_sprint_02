@@ -126,15 +126,15 @@ function showResults(questionsArray, answers) {
     console.log(answerContainer);
     const selector = "input[name=question" + questionNumber + "]:checked";
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    if (!(userAnswer === undefined)) {
-      //moveSvgThree();
-      if (userAnswer === question.rightAnswer) {
-        numCorrect++;
-      }
-    } else {
-      numCorrect = 0;
-      alert("regresa");
+    //if (userAnswer === undefined) {
+    //numCorrect = 0;
+    //alert("regresa");
+    //} else {
+    if (userAnswer === question.rightAnswer) {
+      numCorrect++;
     }
+    //moveSvgThree();
+    //}
   });
   console.log(numCorrect);
 }
@@ -257,7 +257,7 @@ moveSvgThree = () => {
   svgEight.classList.add("hide");
   svgNine.classList.add("hide");
 };
-//buttonThreeSvg.addEventListener("click", moveSvgThree);
+buttonThreeSvg.addEventListener("click", moveSvgThree);
 
 moveSvgFour = () => {
   homeSection.classList.add("hide");
