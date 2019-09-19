@@ -103,6 +103,9 @@ function showResults(questionsArray, answers) {
     console.log(answerContainer);
     const selector = "input[name=question" + questionNumber + "]:checked";
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    //if (userAnswer === undefined) {
+    //alert("regresa");
+    //}
     if (userAnswer === question.rightAnswer) {
       numCorrect++;
     }
@@ -143,6 +146,7 @@ submitButton.addEventListener(
 
 bttnNextThree.addEventListener("click", function(event) {
   event.preventDefault();
+
   showResults(questions, quizContainer);
 });
 
