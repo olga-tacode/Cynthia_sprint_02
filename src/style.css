@@ -183,6 +183,13 @@ label{
   grid-row: 7/8;
 }
 
+.svg-first:nth-child(5) {
+  width: 100%;
+  grid-column: 10/12;
+  grid-row: 1/2;
+  margin: 5% 0 0 5%;
+}
+
 /* ----------------svg-second------------------------------------ */
 
 .svg-second:nth-child(1) {
