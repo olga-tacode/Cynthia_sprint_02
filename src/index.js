@@ -18,6 +18,7 @@ const buttonSixSvg = document.getElementById("six-svg");
 const buttonSevenSvg = document.getElementById("seven-svg");
 const buttonEightSvg = document.getElementById("svg-eight");
 const buttonNineSvg = document.getElementById("nine-svg");
+const finalButton = document.getElementById("final-bttn");
 const submitButtons = document.getElementById("submit");
 
 const nameOf = () => {
@@ -166,3 +167,20 @@ moveSvgNine = () => {
   // window.location.reload(true);
 };
 buttonNineSvg.addEventListener("click", moveSvgNine);
+
+finalMove = () => {
+  homeSection.classList.remove("hide");
+  svgOne.classList.add("hide");
+  svgTwo.classList.add("hide");
+  svgThree.classList.add("hide");
+  svgFour.classList.add("hide");
+  svgFive.classList.add("hide");
+  svgSix.classList.add("hide");
+  svgSeven.classList.add("hide");
+  svgEight.classList.add("hide");
+  svgNine.classList.add("hide");
+  // document.location.reload();location.hash = "#svg-third";
+  //window.location.hash = "#svg-third";
+  // window.location.reload(true);
+};
+finalButton.addEventListener("click", finalMove);
