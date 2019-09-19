@@ -48,7 +48,7 @@ const questionTwo = [
   {
     question: "",
     answers: {
-      a: "Diseño reresposivo; Es facil de usar; Accesibilidad",
+      a: "Diseño responsivo; Es fácil de usar; Accesibilidad",
       b: "Accesibilidad; Performance; Se ve bonito",
       c: "Accesibilidad; Performance; Diseño responsivo"
     },
