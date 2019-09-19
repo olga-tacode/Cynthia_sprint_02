@@ -37,8 +37,7 @@ const submitButton = document.getElementById("submit");
 
 const congrats = document.getElementById("congrats");
 
-const questions = [
-  {
+const questions = [{
     question: "¿Qué es SVG?",
     answers: {
       a: "Un tipo de gráfico vectorial",
@@ -67,29 +66,25 @@ const questions = [
   }
 ];
 
-const questionTwo = [
-  {
-    question: "",
-    answers: {
-      a: "Diseño reresposivo; Es facil de usar; Accesibilidad",
-      b: "Accesibilidad; Performance; Se ve bonito",
-      c: "Accesibilidad; Performance; Diseño responsivo"
-    },
-    rightAnswer: "c"
-  }
-];
+const questionTwo = [{
+  question: "",
+  answers: {
+    a: "Diseño reresposivo; Es facil de usar; Accesibilidad",
+    b: "Accesibilidad; Performance; Se ve bonito",
+    c: "Accesibilidad; Performance; Diseño responsivo"
+  },
+  rightAnswer: "c"
+}];
 
-const questionThree = [
-  {
-    question: "",
-    answers: {
-      a: "Definir figuras en nodos rectos",
-      b: "Definir figuras diferentes, puntos y formas",
-      c: "Definir figuras en curvas"
-    },
-    rightAnswer: "b"
-  }
-];
+const questionThree = [{
+  question: "",
+  answers: {
+    a: "Definir figuras en nodos rectos",
+    b: "Definir figuras diferentes, puntos y formas",
+    c: "Definir figuras en curvas"
+  },
+  rightAnswer: "b"
+}];
 
 function showQuiz(questionsArray, quizContainer) {
   const output = [];
@@ -123,7 +118,6 @@ function showResults(questionsArray, answers) {
   let answerContainers = answers.querySelectorAll(".answers");
   questionsArray.forEach((question, questionNumber) => {
     const answerContainer = answerContainers[questionNumber];
-    console.log(answerContainer);
     const selector = "input[name=question" + questionNumber + "]:checked";
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
     //if (userAnswer === undefined) {
@@ -138,6 +132,7 @@ function showResults(questionsArray, answers) {
   });
   console.log(numCorrect);
 }
+
 const printResults = () => {
   if (numCorrect <= 2) {
     // show number of correct answers out of total
@@ -163,41 +158,7 @@ const printResults = () => {
   }
 };
 
-buttonTwoSvg.addEventListener("click", showQuiz(questions, quizContainer));
-buttonFourSvg.addEventListener(
-  "click",
-  showQuiz(questionTwo, quizContainerTwo)
-);
-submitButton.addEventListener(
-  "click",
-  showQuiz(questionThree, quizContainerThree)
-);
 
-buttonThreeSvg.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  showResults(questions, quizContainer);
-});
-
-buttonFiveSvg.addEventListener("click", function(event) {
-  event.preventDefault();
-  showResults(questionTwo, quizContainerTwo);
-});
-
-submitButton.addEventListener("click", function(event) {
-  event.preventDefault();
-  showResults(questionThree, quizContainerThree);
-  printResults();
-});
-
-buttonNineSvg.addEventListener("click", function(event) {
-  event.preventDefault();
-  showQuiz(questions, quizContainer);
-  showQuiz(questionTwo, quizContainerTwo);
-  showQuiz(questionTwo, quizContainerTwo);
-  showQuiz(questionThree, quizContainerThree);
-  numCorrect = 0;
-});
 
 const nameOf = () => {
   const name = document.getElementById("name").value;
@@ -340,3 +301,33 @@ finalMove = () => {
   // window.location.reload(true);
 };
 finalButton.addEventListener("click", finalMove);
+
+
+
+buttonTwoSvg.addEventListener("click", showQuiz(questions, quizContainer));
+buttonFourSvg.addEventListener("click", showQuiz(questionTwo, quizContainerTwo));
+submitButton.addEventListener("click", showQuiz(questionThree, quizContainerThree));
+
+buttonThreeSvg.addEventListener("click", function (event) {
+  event.preventDefault();
+  showResults(questions, quizContainer);
+});
+
+buttonFiveSvg.addEventListener("click", function (event) {
+  event.preventDefault();
+  showResults(questionTwo, quizContainerTwo);
+});
+
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  showResults(questionThree, quizContainerThree);
+  printResults();
+});
+
+buttonNineSvg.addEventListener("click", function (event) {
+  event.preventDefault();
+  showQuiz(questions, quizContainer);
+  showQuiz(questionTwo, quizContainerTwo);
+  showQuiz(questionThree, quizContainerThree);
+  numCorrect = 0;
+});
