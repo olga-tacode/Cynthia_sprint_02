@@ -126,11 +126,14 @@ function showResults(questionsArray, answers) {
     console.log(answerContainer);
     const selector = "input[name=question" + questionNumber + "]:checked";
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    //if (userAnswer === undefined) {
-    //alert("regresa");
-    //}
-    if (userAnswer === question.rightAnswer) {
-      numCorrect++;
+    if (!(userAnswer === undefined)) {
+      //moveSvgThree();
+      if (userAnswer === question.rightAnswer) {
+        numCorrect++;
+      }
+    } else {
+      numCorrect = 0;
+      alert("regresa");
     }
   });
   console.log(numCorrect);
@@ -254,7 +257,7 @@ moveSvgThree = () => {
   svgEight.classList.add("hide");
   svgNine.classList.add("hide");
 };
-buttonThreeSvg.addEventListener("click", moveSvgThree);
+//buttonThreeSvg.addEventListener("click", moveSvgThree);
 
 moveSvgFour = () => {
   homeSection.classList.add("hide");
@@ -327,16 +330,7 @@ moveSvgEight = () => {
 submitButton.addEventListener("click", moveSvgEight);
 
 moveSvgNine = () => {
-  homeSection.classList.add("hide");
   svgOne.classList.remove("hide");
-  svgTwo.classList.add("hide");
-  svgThree.classList.add("hide");
-  svgFour.classList.add("hide");
-  svgFive.classList.add("hide");
-  svgSix.classList.add("hide");
-  svgSeven.classList.add("hide");
-  svgEight.classList.add("hide");
-  svgNine.classList.add("hide");
 };
 buttonNineSvg.addEventListener("click", moveSvgNine);
 
