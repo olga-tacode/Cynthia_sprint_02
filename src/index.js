@@ -9,17 +9,11 @@ const svgSix = document.getElementById("svg-sixth");
 const svgSeven = document.getElementById("svg-seventh");
 const svgEight = document.getElementById("svg-eighth");
 const svgNine = document.getElementById("svg-nineth");
+
 const buttonOneSvg = document.getElementById("one-svg");
-//const buttonTwoSvg = document.getElementById("two-svg");
-//const buttonThreeSvg = document.getElementById("three-svg");
-//const buttonFourSvg = document.getElementById("four-svg");
-//const buttonFiveSvg = document.getElementById("five-svg");
 const buttonSixSvg = document.getElementById("six-svg");
 const buttonSevenSvg = document.getElementById("seven-svg");
-//const buttonEightSvg = document.getElementById("svg-eight");
-//const buttonNineSvg = document.getElementById("nine-svg");
 const finalButton = document.getElementById("final-bttn");
-//const submitButton = document.getElementById("submit");
 
 const quizContainer = document.getElementById("quiz");
 const quizContainerTwo = document.getElementById("quiz-two");
@@ -97,7 +91,7 @@ function showQuiz(questionsArray, quizContainer) {
         `<p>
               <label>
                 <input class="radio-bttn" name="question${questionNumber}" value="${letter}" type="radio"/>
-               <span class="radio-input"> ${question.answers[letter]}</span>
+                <span class="radio-input"> ${question.answers[letter]}</span>
               </label>
             </p>`
       );
@@ -120,17 +114,17 @@ function showResults(questionsArray, answers) {
     const answerContainer = answerContainers[questionNumber];
     const selector = "input[name=question" + questionNumber + "]:checked";
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    //if (userAnswer === undefined) {
-    //numCorrect = 0;
-    //alert("regresa");
-    //} else {
+    if (questionsArray === questions){
+      moveSvgThree(userAnswer)
+    }else if(questionsArray === questionTwo){
+      moveSvgFive(userAnswer)
+    }else{
+      moveSvgEight(userAnswer)
+    }
     if (userAnswer === question.rightAnswer) {
       numCorrect++;
     }
-    //moveSvgThree();
-    //}
   });
-  console.log(numCorrect);
 }
 
 const printResults = () => {
@@ -157,8 +151,6 @@ const printResults = () => {
             </svg>`;
   }
 };
-
-
 
 const nameOf = () => {
   const name = document.getElementById("name").value;
@@ -210,17 +202,22 @@ moveSvgTwo = () => {
 };
 buttonTwoSvg.addEventListener("click", moveSvgTwo);
 
-moveSvgThree = () => {
-  homeSection.classList.add("hide");
-  svgOne.classList.add("hide");
-  svgTwo.classList.add("hide");
-  svgThree.classList.add("hide");
-  svgFour.classList.remove("hide");
-  svgFive.classList.add("hide");
-  svgSix.classList.add("hide");
-  svgSeven.classList.add("hide");
-  svgEight.classList.add("hide");
-  svgNine.classList.add("hide");
+moveSvgThree = (userAnswer) => {
+  if(userAnswer !== undefined) {
+    homeSection.classList.add("hide");
+    svgOne.classList.add("hide");
+    svgTwo.classList.add("hide");
+    svgThree.classList.add("hide");
+    svgFour.classList.remove("hide");
+    svgFive.classList.add("hide");
+    svgSix.classList.add("hide");
+    svgSeven.classList.add("hide");
+    svgEight.classList.add("hide");
+    svgNine.classList.add("hide");
+  } else{
+    alert("Responde el quiz");
+    moveSvgTwo();
+  }
 };
 buttonThreeSvg.addEventListener("click", moveSvgThree);
 
@@ -238,17 +235,22 @@ moveSvgFour = () => {
 };
 buttonFourSvg.addEventListener("click", moveSvgFour);
 
-moveSvgFive = () => {
-  homeSection.classList.add("hide");
-  svgOne.classList.add("hide");
-  svgTwo.classList.add("hide");
-  svgThree.classList.add("hide");
-  svgFour.classList.add("hide");
-  svgFive.classList.add("hide");
-  svgSix.classList.remove("hide");
-  svgSeven.classList.add("hide");
-  svgEight.classList.add("hide");
-  svgNine.classList.add("hide");
+moveSvgFive = (userAnswer) => {
+  if(userAnswer !== undefined){
+    homeSection.classList.add("hide");
+    svgOne.classList.add("hide");
+    svgTwo.classList.add("hide");
+    svgThree.classList.add("hide");
+    svgFour.classList.add("hide");
+    svgFive.classList.add("hide");
+    svgSix.classList.remove("hide");
+    svgSeven.classList.add("hide");
+    svgEight.classList.add("hide");
+    svgNine.classList.add("hide");
+  } else {
+    alert("Responde el quiz");
+    moveSvgFour();
+  }
 };
 buttonFiveSvg.addEventListener("click", moveSvgFive);
 
@@ -280,17 +282,23 @@ moveSvgSeven = () => {
 };
 buttonSevenSvg.addEventListener("click", moveSvgSeven);
 
-moveSvgEight = () => {
-  homeSection.classList.add("hide");
-  svgOne.classList.add("hide");
-  svgTwo.classList.add("hide");
-  svgThree.classList.add("hide");
-  svgFour.classList.add("hide");
-  svgFive.classList.add("hide");
-  svgSix.classList.add("hide");
-  svgSeven.classList.add("hide");
-  svgEight.classList.add("hide");
-  svgNine.classList.remove("hide");
+moveSvgEight = (userAnswer) => {
+  if(userAnswer !== undefined){
+    homeSection.classList.add("hide");
+    svgOne.classList.add("hide");
+    svgTwo.classList.add("hide");
+    svgThree.classList.add("hide");
+    svgFour.classList.add("hide");
+    svgFive.classList.add("hide");
+    svgSix.classList.add("hide");
+    svgSeven.classList.add("hide");
+    svgEight.classList.add("hide");
+    svgNine.classList.remove("hide");
+  }else {
+    alert("Responde el quiz");
+    moveSvgSeven();
+  }
+
 };
 submitButton.addEventListener("click", moveSvgEight);
 
@@ -301,8 +309,6 @@ buttonNineSvg.addEventListener("click", moveSvgNine);
 
 finalMove = () => {
   document.location.reload();
-
-  // window.location.reload(true);
 };
 finalButton.addEventListener("click", finalMove);
 

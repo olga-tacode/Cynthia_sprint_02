@@ -1,3 +1,5 @@
+/* ----------------General------------------------------------ */
+
 body {
   width: 100%;
   height: 100vh;
@@ -43,7 +45,8 @@ svg {
   cursor: pointer;
   outline: none;
   border: 0;
-  border-radius: 50px;
+  padding: 2%;
+  margin-right: 5%;
 }
 
 .radio-bttn:checked {
@@ -212,7 +215,7 @@ a {
 
 .svg-first:nth-child(5) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -228,7 +231,7 @@ a {
 
 .svg-second:nth-child(2) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -308,7 +311,7 @@ a {
 
 .svg-third:nth-child(3) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -370,7 +373,7 @@ a {
 
 .svg-fourth:nth-child(1) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -424,7 +427,7 @@ a {
 
 .svg-fifth:nth-child(2) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -436,16 +439,14 @@ a {
   grid-row: 3/8;
   display: grid;
   align-items: center;
-  justify-content: center;
 }
 
-#quiz-two p {
-  margin: 5%;
-  font-weight: normal;
-  font-size: 1.5em;
-  line-height: 157.3%;
-  letter-spacing: 0.01em;
-  color: #000000;
+#quiz-two .answers{
+  font-size: 2em;
+}
+
+#quiz-two .answers p{
+  padding-top: 3%;
 }
 
 .svg-fifth:nth-child(4) {
@@ -485,7 +486,7 @@ a {
 
 .svg-sixth:nth-child(2) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -534,7 +535,7 @@ a {
 
 .svg-seventh:nth-child(2) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -582,7 +583,7 @@ a {
 
 .svg-eighth:nth-child(1) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
@@ -649,7 +650,7 @@ a {
 
 .svg-nineth:nth-child(2) {
   width: 100%;
-  grid-column: 10/12;
+  grid-column: 10/13;
   grid-row: 1/2;
   margin: 5% 0 0 5%;
 }
