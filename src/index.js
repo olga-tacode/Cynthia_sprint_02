@@ -201,18 +201,22 @@ buttonNineSvg.addEventListener("click", function(event) {
 
 const nameOf = () => {
   const name = document.getElementById("name").value;
-  const userName = document.getElementById("userName");
-  userName.innerHTML = "Hola " + name;
-  homeSection.classList.add("hide");
-  svgOne.classList.remove("hide");
-  svgTwo.classList.add("hide");
-  svgThree.classList.add("hide");
-  svgFour.classList.add("hide");
-  svgFive.classList.add("hide");
-  svgSix.classList.add("hide");
-  svgSeven.classList.add("hide");
-  svgEight.classList.add("hide");
-  svgNine.classList.add("hide");
+  if (name === "") {
+    alert("Ingresa tu nombre para continuar");
+  } else {
+    const userName = document.getElementById("userName");
+    userName.innerHTML = "Hola " + name;
+    homeSection.classList.add("hide");
+    svgOne.classList.remove("hide");
+    svgTwo.classList.add("hide");
+    svgThree.classList.add("hide");
+    svgFour.classList.add("hide");
+    svgFive.classList.add("hide");
+    svgSix.classList.add("hide");
+    svgSeven.classList.add("hide");
+    svgEight.classList.add("hide");
+    svgNine.classList.add("hide");
+  }
 };
 
 buttonAcept.addEventListener("click", nameOf);
