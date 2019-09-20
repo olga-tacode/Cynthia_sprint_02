@@ -215,7 +215,7 @@ moveSvgThree = (userAnswer) => {
     svgEight.classList.add("hide");
     svgNine.classList.add("hide");
   } else{
-    alert("Responde el quiz");
+    alert("No te vayas sin contestar");
     moveSvgTwo();
   }
 };
@@ -248,7 +248,7 @@ moveSvgFive = (userAnswer) => {
     svgEight.classList.add("hide");
     svgNine.classList.add("hide");
   } else {
-    alert("Responde el quiz");
+    alert("No te vayas sin contestar");
     moveSvgFour();
   }
 };
@@ -295,7 +295,7 @@ moveSvgEight = (userAnswer) => {
     svgEight.classList.add("hide");
     svgNine.classList.remove("hide");
   }else {
-    alert("Responde el quiz");
+    alert("No te vayas sin contestar");
     moveSvgSeven();
   }
 
